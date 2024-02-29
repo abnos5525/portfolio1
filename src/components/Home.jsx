@@ -8,24 +8,17 @@ import SideBar from "./header/drawer/SideBar.jsx";
 
 const Home = ()=>{
 
-    const {handleChange,activeSection} = useContext(AppContext)
+    const {handleChange} = useContext(AppContext)
 
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        setLoading(false);
+        setLoading(true)
 
-        const img = new Image();
-        img.onload = () => {
-            if(activeSection === 0)
-            setLoading(true);
-        };
-        img.src = image;
-
-        return () => {
-            setLoading(false);
-        };
-    }, [setLoading,activeSection]);
+        return()=>{
+            setLoading(false)
+        }
+    }, []);
 
     const imageSize = {
         xl:450,
@@ -52,7 +45,7 @@ const Home = ()=>{
     }
 
     const handleClickAboutMe = () => {
-        handleChange(null, 1);
+        handleChange(null, 1); // Change the active section to the "About Me" section (index 1)
     };
 
     return(
@@ -92,7 +85,6 @@ const Home = ()=>{
                     />
                 </Grid>
             </Slide>
-
         </Grid>
 
     )

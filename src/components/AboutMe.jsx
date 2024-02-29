@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import {Typography, Box, Button, Slide} from "@mui/material";
+import {Typography, Box, Button} from "@mui/material";
 import image from "../assets/myImg2.webp";
 import {useContext, useEffect, useState} from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -12,23 +12,6 @@ const AboutMe = ()=>{
     const [ init, setInit ] = useState(false);
 
     const {activeSection,handleChange} = useContext(AppContext)
-
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(false);
-
-        const img = new Image();
-        img.onload = () => {
-            if(activeSection === 1)
-            setLoading(true);
-        };
-        img.src = image;
-
-        return () => {
-            setLoading(false);
-        };
-    }, [setLoading,activeSection]);
 
     useEffect(() => {
         initParticlesEngine(async (engine) => {
@@ -73,8 +56,6 @@ const AboutMe = ()=>{
     return(
         <>
         <Grid container sx={{ height: "100vh",zIndex:2 }}>
-
-            <Slide direction="left" in={loading} style={{transitionDelay: loading ? "200ms": "0"}}>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}
                       sx={{ display: "flex", justifyContent: "center", alignItems: "center", order: { xs: 1, sm: -1 },
                           mt:textM, position:"relative"}}>
@@ -82,7 +63,6 @@ const AboutMe = ()=>{
                          src={image}
                     />
                 </Grid>
-            </Slide>
 
             <Grid item xs={12} sm={6} md={7} lg={7} xl={7}
                   sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", m: 1,
