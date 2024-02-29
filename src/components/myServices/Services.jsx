@@ -22,12 +22,14 @@ const textBox = {
         color:"primary.main"
     }
 }
-export const MyService = ({ icon, title, description }) => (
-    <Grid item xs={12} md={4}>
-        <Box sx={textBox}>
+export const MyService = ({ icon, title, description }) => {
+    return(
+        <Grid item xs={12} md={4}>
+            <Box sx={textBox}>
                 {icon}
-            <Typography variant="h5" sx={{ marginY: "10px" }}>{title}</Typography>
-            <Typography variant="body2" sx={textStyle}>{description}</Typography>
-        </Box>
-    </Grid>
-);
+                <Typography variant="h5" sx={{marginY: "10px"}}>{title}</Typography>
+                <Typography variant="body2" sx={textStyle}>{description}</Typography>
+            </Box>
+        </Grid>
+    )
+}

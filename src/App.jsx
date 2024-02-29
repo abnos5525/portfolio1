@@ -9,8 +9,6 @@ const App=()=> {
 
     const [drawerOpen, setDrawerOpen] = useState(false)
 
-    const [loading, setLoading] = useState(false)
-
     const sectionRefs = Array.from({ length: 3 }, () => useRef());
 
     const handleChange = (event, newValue) => {
