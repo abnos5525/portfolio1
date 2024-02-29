@@ -40,6 +40,7 @@ const App=()=> {
             handleChange,
             setDrawerOpen,
             drawerOpen,
+            sectionRefs
         }}>
             <MainTemplate>
                 <Header/>

@@ -50,8 +50,8 @@ const AboutMe = ()=>{
     }
 
     const handleClickAboutMe = () => {
-        handleChange(null, 2);
-    };
+        handleChange(null, 2)
+    }
 
     return(
         <>

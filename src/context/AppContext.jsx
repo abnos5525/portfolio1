@@ -6,4 +6,6 @@ export const AppContext = createContext({
 
     drawerOpen: false,
     setDrawerOpen: () =>{},
+
+    sectionRefs: []
 })

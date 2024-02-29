@@ -1,13 +1,27 @@
 import { AppBar, Tab, Tabs, Toolbar, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { TabsInfo } from "../../constant/TabsInfo.jsx";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {AppContext} from "../../context/AppContext.jsx";
 
 const Header = () => {
     const tabs = TabsInfo();
 
     const {activeSection,handleChange} = useContext(AppContext)
+
+    const [showAppBarShadow, setShowAppBarShadow] = useState(false);
+    const [isScrolledToTop, setIsScrolledToTop] = useState(true);
+
+    const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        setShowAppBarShadow(scrollPosition > 0);
+        setIsScrolledToTop(scrollPosition <= 0);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <AppBar
@@ -24,7 +38,7 @@ const Header = () => {
                     xs: "none",
                 },
                 bgcolor: "primary.main",
-                boxShadow: "1px 5px rgba(0,0,222,.1)",
+                boxShadow: isScrolledToTop ? "none" : "1px 10px 6px rgba(0,0,222,.2)",
             }}
         >
             <Toolbar>

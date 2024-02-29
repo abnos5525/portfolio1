@@ -4,8 +4,6 @@ import {Typography, Box, Button} from "@mui/material";
 import Slide from "@mui/material/Slide";
 import {useContext, useEffect, useState} from "react";
 import {AppContext} from "../context/AppContext.jsx";
-import DrawerActionButton from "./header/drawer/DrawerActionButton.jsx";
-import SideBar from "./header/drawer/SideBar.jsx";
 
 const Home = ()=>{
 
@@ -46,13 +44,11 @@ const Home = ()=>{
     }
 
     const handleClickAboutMe = () => {
-        handleChange(null, 1); // Change the active section to the "About Me" section (index 1)
-    };
+        handleChange(null, 1)
+    }
 
     return(
         <Grid container sx={{ height: "100vh", bgcolor:"#cddcfc" }}>
-            <DrawerActionButton/>
-            <SideBar/>
             <Slide direction="left" in={loading} style={{transitionDelay: loading ? "200ms": "0"}}>
 
                 <Grid item xs={12} sm={6} md={7} lg={7} xl={7}
@@ -70,7 +66,8 @@ const Home = ()=>{
                         در ادامه با من همراه باشید تا بهتر منو بشناسید!
                     </Typography>
 
-                    <Button color="secondary" variant="contained" sx={{mt:1,":hover":{bgcolor:"secondary.light"}
+                    <Button color="secondary" variant="contained" sx={{mt:5,":hover":{bgcolor:"secondary.light"},
+                        width:120
                     }}
                     onClick={handleClickAboutMe}>
                         درباره من
