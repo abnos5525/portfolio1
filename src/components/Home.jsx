@@ -52,7 +52,7 @@ const Home = ()=>{
         <Grid container sx={{ height: "100vh", bgcolor:"#cddcfc" }}>
             <DrawerActionButton/>
             <SideBar/>
-            <Slide direction="left" in={loading} style={{transitionDelay: loading ? "200ms": "0"}}>
+            <Slide direction="left" in={loading} style={{transitionDelay: loading ? "300ms": "0"}}>
 
                 <Grid item xs={12} sm={6} md={7} lg={7} xl={7}
                       sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", m: 1,
