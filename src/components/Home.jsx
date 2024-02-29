@@ -11,12 +11,15 @@ const Home = ()=>{
     const {handleChange} = useContext(AppContext)
 
     const [loading, setLoading] = useState(false)
+    const [loading2, setLoading2] = useState(false)
 
     useEffect(() => {
         setLoading(true)
+        setLoading2(true)
 
         return()=>{
             setLoading(false)
+            setLoading2(false)
         }
     }, []);
 
@@ -52,7 +55,7 @@ const Home = ()=>{
         <Grid container sx={{ height: "100vh", bgcolor:"#cddcfc" }}>
             <DrawerActionButton/>
             <SideBar/>
-            <Slide direction="left" in={loading} style={{transitionDelay: loading ? "300ms": "0"}}>
+            <Slide direction="left" in={loading} style={{transitionDelay: loading ? "200ms": "0"}}>
 
                 <Grid item xs={12} sm={6} md={7} lg={7} xl={7}
                       sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", m: 1,
@@ -76,7 +79,7 @@ const Home = ()=>{
                     </Button>
                 </Grid>
             </Slide>
-            <Slide direction="right" in={loading} style={{transitionDelay: loading ? "200ms": "0"}}>
+            <Slide direction="right" in={loading2} style={{transitionDelay: loading2 ? "100ms": "0"}}>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}
                       sx={{ display: "flex", justifyContent: "center", alignItems: "center", m: 1, order: { xs: -1, sm: 1 },
                           mt:textM}}>
