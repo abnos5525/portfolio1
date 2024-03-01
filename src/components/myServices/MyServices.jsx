@@ -16,8 +16,8 @@ const MyServices = ()=>{
         handleChange(null, 0);
     };
     return(
-        <Grid container sx={{ minHeight: "100vh", bgcolor: "#cddcfc", justifyContent: "center", alignItems: "center",
-            color: "text.secondary", p: 2 }}>
+        <Grid container sx={{ minHeight: "100svh", bgcolor: "#cddcfc", justifyContent: "center", alignItems: "center",
+            color: "text.secondary", pt:5 }}>
             <Grid container  spacing={2} item xs={12} justifyContent="center">
                 {serviceData.map((service, index) => (
                     <MyService key={index} {...service} />

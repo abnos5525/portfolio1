@@ -48,41 +48,38 @@ const Home = ()=>{
     }
 
     return(
-        <Grid container sx={{ height: "100vh", bgcolor:"#cddcfc" }}>
-            <Slide direction="left" in={loading} style={{transitionDelay: loading ? "200ms": "0"}}>
-
+        <Grid container sx={{ minHeight: "100svh", bgcolor:"#cddcfc" }}>
                 <Grid item xs={12} sm={6} md={7} lg={7} xl={7}
                       sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", m: 1,
                       mt:textM}}>
                     <Typography variant="h5" sx={{color:"text.secondary"}}>
                         این من هستم
                     </Typography>
-
-                    <Typography variant="h3" sx={{color:"text.secondary",py:2,fontSize:mainTextSize}}>
-                        علیرضا افشار
-                    </Typography>
-
+                    <Slide direction="left" in={loading} style={{transitionDelay: loading ? "200ms": "0"}}>
+                        <Typography variant="h3" sx={{color:"text.secondary",py:2,fontSize:mainTextSize}}>
+                            علیرضا افشار
+                        </Typography>
+                    </Slide>
                     <Typography variant="body1" sx={{color:"text.secondary",textAlign:"center"}}>
                         در ادامه با من همراه باشید تا بهتر منو بشناسید!
                     </Typography>
 
                     <Button color="secondary" variant="contained" sx={{mt:5,":hover":{bgcolor:"secondary.light"},
-                        width:120
+                        width:120, zIndex:3
                     }}
                     onClick={handleClickAboutMe}>
                         درباره من
                     </Button>
                 </Grid>
-            </Slide>
-            <Slide direction="right" in={loading} style={{transitionDelay: loading ? "100ms": "0"}}>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}
                       sx={{ display: "flex", justifyContent: "center", alignItems: "center", m: 1, order: { xs: -1, sm: 1 },
                           mt:textM}}>
-                    <Box component="img" sx={{width:imageSize}}
-                         src={image}
-                    />
+                    <Slide direction="right" in={loading} style={{transitionDelay: loading ? "100ms": "0"}}>
+                        <Box component="img" sx={{width:imageSize}}
+                             src={image}
+                        />
+                    </Slide>
                 </Grid>
-            </Slide>
         </Grid>
 
     )
