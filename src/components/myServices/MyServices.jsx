@@ -23,7 +23,7 @@ const MyServices = ()=>{
                     <MyService key={index} {...service} />
                 ))}
 
-                <Fab color="secondary" variant="contained" sx={{mt:5,":hover":{bgcolor:"secondary.light"}}}
+                <Fab color="secondary" variant="contained" sx={{my:5,":hover":{bgcolor:"secondary.light"}}}
                      onClick={handleClickAboutMe}>
                     <NavigationRounded/>
                 </Fab>

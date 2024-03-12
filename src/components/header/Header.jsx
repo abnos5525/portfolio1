@@ -29,7 +29,7 @@ const Header = () => {
             sx={{
                 width: "100%",
                 height: 60,
-                zIndex: 2,
+                zIndex: 5,
                 display: {
                     xl: "block",
                     lg: "block",
